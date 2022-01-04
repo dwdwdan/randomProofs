@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+*.aux
+*.dvi
+*.log
+*.fdb_latexmk
+*.out
+*.fls
+.auctex-auto/

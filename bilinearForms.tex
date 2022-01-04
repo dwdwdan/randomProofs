@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{latexTools}
+\title{A Theorem on Bilinear Forms}
+\author{D Walters}
+\begin{document}
+\maketitle
+    \begin{theorem}
+ Assume \(F\) is a bilinear form. Let \(A\) be the diagonal matrix representing \(F\), and assume it has no \(0\)'s on it's diagonal.
+ Then \(F\) is positive definite if and only if the diagonal contains only strictly positive elements.
+    \end{theorem}
+    \begin{proof}
+      Let the diagonal elements of the matrix be \(a_{1}, \ldots,a_{n}\) such that the matrix has the form
+      \begin{equation}
+\begin{pmatrix}
+  a_{1} & 0 & 0 & 0\\
+  0 & a_{2} & 0 & 0 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & 0 & a_{n}
+\end{pmatrix}
+      \end{equation}
+
+      First assume that \(a_{1},\ldots a_{n} > 0\), and let \(x\) be an arbitrary non-zero vector such that
+      \begin{align}
+        x&=\sum_{i=1}^{n}\lambda_{i}e_{i}\\
+      \intertext{where \(\lambda_{1},\ldots, \lambda_{n}\in \IR\) and are not all \(0\). Then we have that}
+        F(x,x) &= \sum_{i=1}^{n}\lambda_{i}^{2}a_{i} \geq 0.\\
+                 \intertext{However, \(F(x,x)=0\) if and only if all \(\lambda_{i}=0\), so we can conclude that}
+        F(x,x) &> 0
+      \end{align}
+      and therefore that \(F\) is positive definite.
+
+      Now assume that some \(a_{k} < 0\), then choose \(x=e_{k}\). Then,
+      \begin{align}
+F(x,x)=F(e_{k},e_{k})=a_{k}<0
+      \end{align}
+      so \(F\) is not positive definite.
+
+    \end{proof}
+\end{document}
